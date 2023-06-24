@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-zinc-50">
+      <body className="bg-primary">
         <div className="min-h-screen flex flex-col">
         <NavBar />
         <div className="flex-1">

@@ -10,3 +10,14 @@
   --purple: #E7D7E9;
   --yellow: #F5E488;
 }
+
+.bg-primary {
+  background-color: #ffffff;
+}
+
+.hero-gradient {
+  background: linear-gradient(0deg,#f5f5f5,#ffffff) repeat-x;
+  background-size: auto 45px;
+  background-position: bottom;
+  overflow: hidden;
+}

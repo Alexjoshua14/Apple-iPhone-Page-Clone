@@ -1,5 +1,6 @@
 import { navOptions } from '../constants/data';
 import { IconType } from 'react-icons';
+import Buy from './Buy';
 
 const NavBar = () => {
   return (
@@ -25,7 +26,7 @@ const NavBar = () => {
               <span className="hover:text-blue-500 cursor-pointer">Overview</span>
               <span className="hover:text-blue-500 cursor-pointer">Switch from Android to iPhone</span>
               <span className="hover:text-blue-500 cursor-pointer">Tech Specs</span>
-              <button className="bg-blue-600 px-3 py-1 rounded-full text-zinc-200 ">Buy</button>
+              <Buy size={1} />
             </div>
       </div>
     </div>

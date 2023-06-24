@@ -9,7 +9,7 @@ const Hero = () => {
   const [selectedColor, setSelectedColor] = useState("yellow");
 
   return (
-    <div className=" h-[34rem] border-2 border-green-500 ">
+    <div className="h-[34rem] hero-gradient">
       <div className="px-4 py-2 text-[3.4rem] font-medium">Wonderfull.</div>
       <div className="flex">
         {phoneImages.map((image, index) => (
