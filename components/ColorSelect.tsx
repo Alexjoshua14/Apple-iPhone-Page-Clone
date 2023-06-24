@@ -9,10 +9,10 @@ const ColorSelect = () => {
   const [selectedColor, setSelectedColor] = useState<ColorOption>(colorOptions[5]);
 
   return (
-    <div className="flex justify-end items-center h-12 sticky top-0 px-8
+    <div className="flex justify-end items-center h-12 sticky top-[3.6rem] px-8 z-20
                     text-[.74rem] font-light text-zinc-800 
                     bg-white backdrop-filter backdrop-blur-lg bg-opacity-50
-                    border-2 border-teal-500">
+                    ">
       <div className="flex gap-2 items-center">
         <span className="px-2 text-[.95rem] font-medium">
           { 
