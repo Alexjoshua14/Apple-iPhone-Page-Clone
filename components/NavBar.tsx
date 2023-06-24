@@ -3,8 +3,8 @@ import { IconType } from 'react-icons';
 
 const NavBar = () => {
   return (
-    <div className="flex flex-col h-24 text-[.7rem] font-light text-zinc-800">
-      <div className="flex-[0.5] flex justify-center items-center gap-1 sm:gap-[1.9rem] px-1 xl:gap-[3.2rem]">
+    <div className="flex flex-col h-24 text-[.74rem] font-light text-zinc-800">
+      <div className="flex-[0.5] flex justify-center items-center gap-1 sm:gap-[1.85rem] px-1 xl:gap-[3.2rem]">
           {navOptions.map((option, index) => (
             <div key={index}>
               {option.icon ? 
