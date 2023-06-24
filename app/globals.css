@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --midnight: #31353A;
+  --starlight: #F0ECE8;
+  --red: #E11C2A;
+  --blue: #C0CFDE;
+  --purple: #E7D7E9;
+  --yellow: #F5E488;
+}
