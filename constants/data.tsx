@@ -176,7 +176,7 @@ export const impactData: CardData[] = [
     link: "https://www.apple.com/accessibility/",
     imgURL: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/accessibility__chjiilbtptjm_large_2x.jpg",
     alt: "Voice over example",
-    width: 300,
+    width: 270,
     height: 100
   },
 ]
