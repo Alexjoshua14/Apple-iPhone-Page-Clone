@@ -1,9 +1,10 @@
 
+import { impactData } from "../constants/data";
+import CardSection from "./cardSection";
+
 const Impact = () => {
   return (
-    <div className="h-[40rem] border-2 border-pink-500">
-      Impact Section
-    </div>
+    <CardSection data={impactData} header="Designed to make a difference." />
   );
 }
 

@@ -9,6 +9,18 @@ export interface ColorOption {
   hex: string
 }
 
+export interface CardData { 
+  icon?: string,
+  title: string,
+  desc?: string,
+  linkText: string,
+  link: string,
+  imgURL: string,
+  alt: string,
+  width: number,
+  height: number,
+}
+
 export const navOptions: { name: string, icon?: IconType, size?: number }[] = [
   {
     name: 'Home',
@@ -93,5 +105,74 @@ export const phoneImages: {color: string, imageURL: string, matrix: string}[] = 
   { color: 'yellow', 
   imageURL: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_yellow__d3aifvttsuuu_medium.jpg',
   matrix: 'matrix(0.87, 0, 0, 0.87, 0, 0)'
+  },
+]
+
+export const savingsData: CardData[] = [
+  {
+    title: "Get $200–$630 in credit toward iPhone 14 when you trade in iPhone 11 or higher.",
+    desc: "",
+    linkText: "See what your device is worth",
+    link: "https://www.apple.com/us/shop/goto/trade_in",
+    imgURL: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/trade_in__ddpb48zprkya_medium_2x.jpg",
+    alt: "Device trade in",
+    width: 400,
+    height: 200
+  },
+  {
+    title: "Save up to $800 on iPhone 14 with carrier deals at Apple.",
+    desc: "",
+    linkText: "See iPhone deals",
+    link: "https://www.apple.com/us/shop/goto/buy_iphone/carrier_offers",
+    imgURL: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/trade_in__ddpb48zprkya_medium_2x.jpg",
+    alt: "Carrier deals",
+    width: 400,
+    height: 200
+  },
+  { 
+    title: "Pay 0% APR over 24 months with Apple Card.",
+    desc: "",
+    linkText: "Learn more",
+    link: "https://www.apple.com/apple-card/monthly-installments/",
+    imgURL: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/apple_card__ewustuxm1ziq_large_2x.jpg",
+    alt: "Apple Card",
+    width: 200,
+    height: 100
+  },
+]
+
+export const impactData: CardData[] = [
+  {
+    icon: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/icon_environment__c6uj2lv9q9ci_large_2x.png",
+    title: "Recycling, reimagined.",
+    desc: "",
+    linkText: "See how iPhone reuses materials to conserve resources",
+    link: "https://www.apple.com/environment/",
+    imgURL: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/privacy__b63b9akq4zma_large_2x.jpg",
+    alt: "Sketch of Earth",
+    width: 400,
+    height: 200
+  },
+  {
+    icon: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/icon_privacy__bnq8lcu8gsoi_large_2x.png",
+    title: "Save up to $800 on iPhone 14 with carrier deals at Apple.",
+    desc: "",
+    linkText: "Check out the latest privacy features for iPhone",
+    link: "https://www.apple.com/privacy/",
+    imgURL: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/privacy__b63b9akq4zma_large_2x.jpg",
+    alt: "iPhone privacy in action",
+    width: 400,
+    height: 200
+  },
+  {
+    icon: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/icon_accessibility__fiow2fk4hziq_large_2x.png",
+    title: "Pay 0% APR over 24 months with Apple Card.",
+    desc: "Choose Apple Card Monthly Installments when you check out.",
+    linkText: "Discover helpful accessibility features like VoiceOver",
+    link: "https://www.apple.com/accessibility/",
+    imgURL: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/accessibility__chjiilbtptjm_large_2x.jpg",
+    alt: "Voice over example",
+    width: 200,
+    height: 100
   },
 ]

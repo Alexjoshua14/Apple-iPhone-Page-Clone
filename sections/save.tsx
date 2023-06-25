@@ -1,10 +1,11 @@
 
-const Save = () => {
+import { savingsData } from "../constants/data";
+import CardSection from "./cardSection";
+
+const Savings = () => {
   return (
-    <div className="h-[40rem] border-2 border-purple-500">
-      Ways to Save Section
-    </div>
+    <CardSection data={savingsData} header="Ways to save on iPhone." />
   );
 }
 
-export default Save;
+export default Savings;
