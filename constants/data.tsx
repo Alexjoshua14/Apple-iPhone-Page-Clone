@@ -11,6 +11,7 @@ export interface ColorOption {
 
 export interface CardData { 
   icon?: string,
+  iconAlt?: string,
   title: string,
   desc?: string,
   linkText: string,
@@ -131,7 +132,7 @@ export const savingsData: CardData[] = [
   },
   { 
     title: "Pay 0% APR over 24 months with Apple Card.",
-    desc: "",
+    desc: "Choose Apple Card Monthly Installments when you check out.",
     linkText: "Learn more",
     link: "https://www.apple.com/apple-card/monthly-installments/",
     imgURL: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/apple_card__ewustuxm1ziq_large_2x.jpg",
@@ -144,35 +145,38 @@ export const savingsData: CardData[] = [
 export const impactData: CardData[] = [
   {
     icon: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/icon_environment__c6uj2lv9q9ci_large_2x.png",
+    iconAlt: "Sustainable Apple icon",
     title: "Recycling, reimagined.",
     desc: "",
     linkText: "See how iPhone reuses materials to conserve resources",
     link: "https://www.apple.com/environment/",
-    imgURL: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/privacy__b63b9akq4zma_large_2x.jpg",
+    imgURL: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/environment__26l1ur8e2wy2_large_2x.jpg",
     alt: "Sketch of Earth",
-    width: 400,
-    height: 200
+    width: 150,
+    height: 150
   },
   {
     icon: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/icon_privacy__bnq8lcu8gsoi_large_2x.png",
-    title: "Save up to $800 on iPhone 14 with carrier deals at Apple.",
+    iconAlt: "Privacy Apple icon",
+    title: "Privacy. That's iPhone.",
     desc: "",
     linkText: "Check out the latest privacy features for iPhone",
     link: "https://www.apple.com/privacy/",
     imgURL: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/privacy__b63b9akq4zma_large_2x.jpg",
     alt: "iPhone privacy in action",
-    width: 400,
-    height: 200
+    width: 320,
+    height: 300
   },
   {
     icon: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/icon_accessibility__fiow2fk4hziq_large_2x.png",
-    title: "Pay 0% APR over 24 months with Apple Card.",
-    desc: "Choose Apple Card Monthly Installments when you check out.",
+    iconAlt: "Accessibility icon",
+    title: "iPhone for all.",
+    desc: "",
     linkText: "Discover helpful accessibility features like VoiceOver",
     link: "https://www.apple.com/accessibility/",
     imgURL: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/accessibility__chjiilbtptjm_large_2x.jpg",
     alt: "Voice over example",
-    width: 200,
+    width: 300,
     height: 100
   },
 ]
