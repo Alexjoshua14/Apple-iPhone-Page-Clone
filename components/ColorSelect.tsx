@@ -15,7 +15,7 @@ const ColorSelect = () => {
                     ">
       <div className="flex gap-2 items-center">
         <span className="px-2 text-[.95rem] font-medium">
-          { 
+          {
             selectedColor.base ?
               (
                 <span className="tracking-tighter text-[.85rem] font-mono" 

@@ -13,11 +13,13 @@ import ColorSelect from '../components/ColorSelect';
 export default function Home() {
   return (
     <div className="flex flex-col h-full border-2 border-amber-500">
-      <TradeIn />
-      <ColorSelect />
-      <Hero />
-      <BuyNow />
-      <SpecGallery />
+      <div>
+        <TradeIn />
+        <ColorSelect />
+        <Hero />
+        <BuyNow />
+        <SpecGallery />
+      </div>
       <Save />
       <Impact />
       <CompareModels />

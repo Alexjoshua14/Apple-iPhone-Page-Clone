@@ -2,6 +2,8 @@ import { IconType } from "react-icons";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsBag } from "react-icons/bs";
 import { AiFillApple } from "react-icons/ai";
+import { HiOutlineMenuAlt4 } from "react-icons/hi";
+import { PiCaretDownThin } from "react-icons/pi";
 
 export interface ColorOption {
   color: string,
@@ -71,6 +73,36 @@ export const navOptions: { name: string, icon?: IconType, size?: number }[] = [
     icon: BsBag,
     size: 14
   }
+]
+
+export const appleIcon = {
+  name: 'Home',
+  icon: AiFillApple,
+  size: 22
+}
+
+export const downArrow = {
+  name: 'Down Arrow',
+  icon: PiCaretDownThin,
+  size: 25
+}
+  
+export const smallNavOptions: {name: string, icon: IconType, size: number}[] = [
+  {
+    name: 'Search',
+    icon: AiOutlineSearch,
+    size: 20
+  },
+  {
+    name: 'Bag',
+    icon: BsBag,
+    size: 17
+  },
+  {
+    name: 'Menu',
+    icon: HiOutlineMenuAlt4,
+    size: 19
+  },
 ]
 
 export const colorOptions: {color: string, base?: string, hex: string}[] = [

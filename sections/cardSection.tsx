@@ -14,7 +14,7 @@ const CardSection = ({ data, header }: SectionProps) => {
   return (
     <div className="h-fit flex justify-center">
       <div className="flex flex-col justify-center items-center w-min py-16">
-        <div className="flex flex-wrap justify-start w-full lg:pe-[30rem]">
+        <div className="flex flex-wrap justify-start w-full pb-16 lg:pe-[30rem]">
           <span className="text-4xl md:text-6xl font-medium">{header}</span>
         </div>
         <div className="flex flex-wrap items-center gap-5 justify-center w-min

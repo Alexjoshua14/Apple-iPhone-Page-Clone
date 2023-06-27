@@ -5,7 +5,7 @@ interface BuyProps {
 
 const Buy = ({size}: BuyProps) => {
   return (
-    <button className={`bg-blue-600 rounded-full text-zinc-50 font-extralight`}
+    <button className={`bg-blue-600 rounded-full text-zinc-50 font-extralight hover:bg-blue-500`}
             style={{padding: `${size*.25}rem ${size*.75}rem`}}
       >
       Buy
