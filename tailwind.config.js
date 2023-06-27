@@ -21,6 +21,9 @@ module.exports = {
         'md': '734px',
         'md2': '834px',
         'lg': '1068px'
+      },
+      gridTemplateRows: {
+        '8': 'repeat(8, 1fr)',
       }
     },
   },
