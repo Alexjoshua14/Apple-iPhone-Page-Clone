@@ -15,6 +15,12 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+      /* Update breakpoints to match official Apple site */
+      screens: {
+        'md': '734px',
+        'md2': '834px',
+        'lg': '1068px'
       }
     },
   },
