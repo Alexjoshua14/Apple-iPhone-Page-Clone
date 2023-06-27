@@ -46,9 +46,11 @@ const Card = ({data, index}: CardProps) => {
 const CardSection = ({ data, header }: SectionProps) => {
   return (
     <div className="h-fit flex justify-center">
-      <div className="flex flex-col justify-center items-center w-max py-16 px-6">
+      <div className="flex flex-col justify-center items-center w-max max-w-[1050px] py-16 px-6">
         <div className="flex flex-wrap justify-start w-full pb-16 lg:pe-[30rem]">
-          <span className="text-4xl md:text-6xl font-medium">{header}</span>
+          <span className="text-4xl md:text-6xl font-medium">
+            {header}
+          </span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-center justify-center md:justify-normal md:w-max"
         >
