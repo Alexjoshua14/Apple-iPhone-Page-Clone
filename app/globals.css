@@ -21,3 +21,42 @@
   background-position: bottom;
   overflow: hidden;
 }
+
+
+  .grid-item-0 {
+    @apply h-[31.75rem] order-1 md:h-full col-span-2 row-span-2
+  }
+  .grid-item-1 {
+    @apply h-[23.5rem] order-2 md:h-full
+  }
+  .grid-item-2 {
+    @apply h-[23.5rem] order-3 md:h-full
+  }
+  .grid-item-3 {
+    @apply h-[23.5rem] order-4 md:h-full
+  }
+  .grid-item-4 {
+    @apply h-[23.5rem] order-5 md:h-full col-span-2
+  }
+  .grid-item-5 {
+    @apply h-[31.75rem] order-6 md:order-7 md:h-full md:col-span-2 row-span-2
+  }
+  .grid-item-6 {
+    @apply h-[23.5rem] order-7 md:order-6 md:h-full
+  }
+  .grid-item-7 {
+    @apply h-[23.5rem] order-8 md:h-full
+  }
+  .grid-item-8 {
+    @apply h-[23.5rem] order-9 md:h-full col-span-2
+  }
+  .grid-item-9 {
+    @apply h-[23.5rem] order-10 md:h-full
+  }
+  .grid-item-10 {
+    @apply h-[31.75rem] order-11 col-span-2 row-span-2
+  }
+  .grid-item-11 {
+    @apply h-[31.75rem] order-12 row-span-2
+  }
+

@@ -24,6 +24,12 @@ export interface CardData {
   height: number,
 }
 
+export interface SpecData {
+  header: string,
+  description: string,
+  img: string,
+}
+
 export const navOptions: { name: string, icon?: IconType, size?: number }[] = [
   {
     name: 'Home',
@@ -212,3 +218,67 @@ export const impactData: CardData[] = [
     height: 100
   },
 ]
+
+export const specData: SpecData[] = [
+    {
+      header: "header",
+      description: "description",
+      img: "",
+  
+    }, {
+      header: "header",
+      description: "description",
+      img: "",
+  
+    }, {
+      header: "header",
+      description: "description",
+      img: "",
+  
+    }, {
+      header: "header",
+      description: "description",
+      img: "",
+  
+    }, {
+      header: "header",
+      description: "description",
+      img: "",
+  
+    }, {
+      header: "header",
+      description: "description",
+      img: "",
+  
+    }, {
+      header: "header",
+      description: "description",
+      img: "",
+  
+    }, {
+      header: "header",
+      description: "description",
+      img: "",
+  
+    }, {
+      header: "header",
+      description: "description",
+      img: "",
+  
+    }, {
+      header: "header",
+      description: "description",
+      img: "",
+  
+    }, {
+      header: "header",
+      description: "description",
+      img: "",
+  
+    }, { 
+    header: "header",
+    description: "description",
+    img: "",
+  
+    }
+  ]
