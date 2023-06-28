@@ -15,7 +15,6 @@
   --color-stop-1: #81be2c;
   --color-stop-2: #333336;
   --batteryGradient: radial-gradient(ellipse at top, var(--color-stop-0) 0%, var(--color-stop-1) var(--green-percentage), var(--color-stop-2) var(--black-percentage));
-  --echoGradient: linear-gradient(90deg, var(--color-stop-2) 0%,  var(--color-stop-0) 50%, var(--color-stop-2) 100%);
 }
 
 .gradientBackground {
@@ -27,10 +26,10 @@
 }
 
 .echoTextGradient {
-  background: var(--echoGradient);
-  background-position: 0 0;
-  background-attachment: fixed;
-  background-size: 400px 400px;
+  background: var(--batteryGradient);
+  background-position: initial;
+  background-attachment: local;
+  background-size: 200px 200px;
   -webkit-background-clip: text;
   background-clip: text border-box;
   -webkit-text-fill-color: transparent;
