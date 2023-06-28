@@ -15,6 +15,7 @@
   --color-stop-1: #81be2c;
   --color-stop-2: #333336;
   --batteryGradient: radial-gradient(ellipse at top, var(--color-stop-0) 0%, var(--color-stop-1) var(--green-percentage), var(--color-stop-2) var(--black-percentage));
+  --echoGradient: linear-gradient(90deg, var(--color-stop-2) 0%,  var(--color-stop-0) 50%, var(--color-stop-2) 100%);
 }
 
 .gradientBackground {
@@ -23,6 +24,21 @@
   background-clip: text border-box;
   -webkit-text-fill-color: transparent;
   color: transparent;
+}
+
+.echoTextGradient {
+  background: var(--echoGradient);
+  background-position: 0 0;
+  background-attachment: fixed;
+  background-size: 400px 400px;
+  -webkit-background-clip: text;
+  background-clip: text border-box;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.echoText {
+  @apply bg-zinc-100;
 }
 
 .bg-primary {

@@ -47,6 +47,13 @@ const card6Data = {
   height: 467
 }
 
+const card7Data = {
+  lines: ["A15 Bionic chip.", "Fast that lasts."],
+  image: "https://www.apple.com/v/iphone-14/i/images/key-features/features/chip/chip_yellow_endframe__b7ewc4s0trzm_medium.jpg",
+  alt: "Racing game",
+  width: 262,
+  height: 226
+}
 
 export const Card1 = () => {
   return (
@@ -105,16 +112,21 @@ export const Card3 = () => {
 
 export const Card4 = () => {
   return (
-    <div className="flex flex-col h-full w-full">
-
+    <div className="flex flex-col h-full w-full py-16 md:py-8 lg:py-16 justify-around items-center text-center">
+      <div className="gradientBackground">
+        <span className="text-6xl md:text-5xl lg:text-6xl font-medium">Water resistance.</span>
+      </div>
+      <div>
+        <span className="text-2xl md:text-lg lg:text-2xl font-medium">(Phew.)</span>
+      </div>
     </div>
   )
 }
 
 export const Card5 = () => {
   return (
-    <div className="flex flex-col h-full w-full justify-center items-center">
-      <div className="flex flex-col justify-center items-center text-center">
+    <div className="flex flex-col h-full w-full justify-between items-center">
+      <div className="flex flex-col justify-center items-center text-center pt-[5.5rem] md:pt-6">
         <span className="text-lg text-zinc-400">{card5Data.header}</span>
         <span className="text-lg lg:text-2xl font-medium">{card5Data.description}</span>
       </div>
@@ -153,16 +165,45 @@ export const Card6 = () => {
 
 export const Card7 = () => {
   return (
-    <div className="flex flex-col h-full w-full">
-
+    <div className="flex flex-end h-full w-full justify-center items-center relative">
+      <div className="overlay">
+        <div className="flex flex-col mb-[36px] text-lg leading-6 text-zinc-50 text-center">
+          {card7Data.lines.map((item, index) => (
+            <span key={index}>{item}</span>
+          ))}
+        </div>
+      </div>
+      <div>
+        <Image src={card7Data.image} width={card7Data.width} height={card7Data.height} alt={card7Data.alt} />
+      </div>
     </div>
   )
 }
 
 export const Card8 = () => {
   return (
-    <div className="flex flex-col h-full w-full">
-
+    <div className="flex flex-col h-full w-full justify-center items-center text-center">
+      <div>
+        <span className="text-lg echoTextGradient">Superspeedy</span>
+      </div>
+      <div className="flex h-1/2 w-full relative text-[7rem] leading-[5.4rem] font-medium justify-center">
+        <div className="absolute top-0 w-[54%] flex justify-center px-[.4rem] pb-4 z-[5] echoText">
+          <span className="echoTextGradient">5</span>
+          <span className="echoTextGradient">G</span>
+        </div>
+        <div className="absolute top-0 w-[72%] flex justify-between px-[.4rem] pb-4 z-[4] echoText">
+          <span className="echoTextGradient">5</span>
+          <span className="echoTextGradient">G</span>
+        </div>
+        <div className="absolute top-0 w-[88%] flex justify-between px-[.4rem] pb-4 z-[3] echoText">
+          <span className="echoTextGradient">5</span>
+          <span className="echoTextGradient">G</span>
+        </div>
+        <div className="absolute top-0 w-[102%] flex justify-between px-[.4rem] pb-4 z-[2] echoText">
+          <span className="echoTextGradient">5</span>
+          <span className="echoTextGradient">G</span>
+        </div>
+      </div>
     </div>
   )
 }
