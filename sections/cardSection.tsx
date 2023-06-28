@@ -55,7 +55,7 @@ const CardSection = ({ data, header }: SectionProps) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-center justify-center md:justify-normal md:w-max"
         >
           {data.map((data, index) => (
-            <Card data={data} index={index} />
+            <Card key={index} data={data} index={index} />
             // <div key={index} className="flex flex-col justify-between rounded-xl bg-zinc-100
             //                             max-w-[400px] h-[525px] w-max overflow-hidden pt-[25px]
             //                             md:w-[19rem]"

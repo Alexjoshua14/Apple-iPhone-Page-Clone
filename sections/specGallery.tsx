@@ -1,17 +1,50 @@
-import { cardSet } from "../components/cards";
+'use client'
+
+import React from "react";
+import { CardSet } from "../components/cards";
+import { useRef } from "react";
+import { motion, useScroll,  useTransform} from "framer-motion";
+import { FaChevronRight } from "react-icons/fa";
+
+const CardContainer = (Item: React.FC, index: number) => {
+
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({target: ref, 
+                                offset: index == 0 ? ["start end", "center end"] : ["center end", "end end"]
+                                });
+  
+  return (
+    <motion.div 
+      ref={ref} 
+      key={index} 
+      className={`grid-item-${index} md:h-full rounded-[1.5rem] bg-zinc-100 relative overflow-hidden`}
+      style={{opacity: scrollYProgress}}
+    >
+      <Item />
+      <motion.div 
+        className="absolute bottom-0 right-0 p-[7px] m-[15px] flex justify-center items-center rounded-full"
+        style={{background: "var(--yellow)"}}
+        initial={{ opacity: .5, x: -15 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true}}
+        transition={{ ease: "linear", duration: .5,}}
+      > 
+        <FaChevronRight size={18} />
+      </motion.div>
+    </motion.div>
+  )
+}
 
 const SpecGallery = () => {
   
   return (
-    <div className="flex justify-center h-max md:h-[130rem] py-10 border-2 border-yellow-500">
+    <div className="flex justify-center h-max md:h-[124rem] py-10 border-2 border-yellow-500">
       <div className="w-[400px] flex flex-col h-full justify-center
                       md:w-[700px] md:grid grid-cols-5 gap-2 grid-rows-8
                       lg:w-[1000px]
       ">
-        {cardSet.map((item, index) => (
-            <div key={index} className={`grid-item-${index} md:h-full rounded-[1.5rem] bg-zinc-100 overflow-hidden`}>
-              {item}
-            </div>
+        {CardSet.map((Item: React.FC, index) => (
+            CardContainer(Item, index)
         ))}
       </div>
     </div>
@@ -19,3 +52,13 @@ const SpecGallery = () => {
 }
 
 export default SpecGallery;
+
+{/* <motion.div
+              key={index}
+              className={`grid-item-${index} md:h-full rounded-[1.5rem] bg-zinc-100 overflow-hidden opacity-[${opacity}%]`}
+              // initial={{opacity: 0}}
+              // whileInView={{opacity: 1}}
+              // transition={{ease: "linear", duration: 1}}
+            >
+              {item}
+            </motion.div> */}
