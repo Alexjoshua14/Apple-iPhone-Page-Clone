@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from 'next/image';
 
@@ -54,6 +54,41 @@ const card7Data = {
   width: 262,
   height: 226
 }
+
+const card9Data = {
+  lines: ["Emergency SOS", "via satellite"],
+  videoLink: "https://www.apple.com/105/media/us/iphone-14/2023/97f8aced-10f6-4f98-a722-2c87ef5b9ee6/anim/emergency-sos/medium_2x.mp4",
+  alt: "Emergency SOS",
+  width: 416,
+  height: 226,
+}
+
+const card10Data = {
+  image: "https://www.apple.com/v/iphone-14/i/images/key-features/features/crash-detection/crash_yellow__nzeqyx7jyeim_medium_2x.jpg",
+  alt: "Crash Detection",
+  width: 261,
+  height: 226
+}
+
+const card11Data = {
+  header: "Personalization",
+  lines: ["Your photo. Your font.", "Your widgets. Your iPhone."],
+  image: "https://www.apple.com/v/iphone-14/i/images/key-features/features/ios16/ios16_yellow__fl7jo2364wuy_medium_2x.jpg",
+  alt: "iPhone home screen with widgets",
+  width: 210,
+  height: 305
+}
+
+const card12Data = {
+  lines: ["Sharper, smarter,", "snappier selfies."],
+  image: "https://www.apple.com/v/iphone-14/i/images/key-features/features/true-depth/truedepth_yellow__gchqjrfxfxm6_medium.jpg",
+  alt: "iPhone home screen with widgets",
+  width: 261,
+  height: 467
+}
+
+
+
 
 export const Card1 = () => {
   return (
@@ -151,6 +186,7 @@ export const Card6 = () => {
         </div>
       </div>
       <div
+        className="h-full w-full"
         style={{ 
           transform: isInView ? "none" : "scale(1.2)",
           opacity: isInView ? 1 : 0,
@@ -173,7 +209,7 @@ export const Card7 = () => {
           ))}
         </div>
       </div>
-      <div>
+      <div className="flex justify-center items-center h-full w-full">
         <Image src={card7Data.image} width={card7Data.width} height={card7Data.height} alt={card7Data.alt} />
       </div>
     </div>
@@ -209,9 +245,28 @@ export const Card8 = () => {
 }
 
 export const Card9 = () => {
-  return (
-    <div className="flex flex-col h-full w-full">
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: .8 });
+  useEffect(() => {
+    console.log(isInView);
+  }, [isInView]);
 
+  return (
+    <div ref={ref} className="flex flex-col h-full w-full">
+      {/* Note that documentation says autoplay="false" shoudn't work */}
+      <div className="absolute flex justify-center items-center w-full h-full">
+        <motion.div className="flex flex-col text-3xl font-medium text-zinc-50 text-center"
+          initial={{ opacity: 0}}
+          whileInView={{ opacity: 1}}
+          viewport={{ once: true}}
+          transition={{ ease: "linear", duration: 1, delay: .5}}
+        >
+          {card9Data.lines.map((item, index) => (
+            <span key={index}>{item}</span>
+          ))}
+        </motion.div>
+      </div>
+      <video muted playsInline autoPlay={isInView} height={card9Data.height} width={card9Data.width} src={card9Data.videoLink} />
     </div>
   )
 }
@@ -219,23 +274,59 @@ export const Card9 = () => {
 export const Card10 = () => {
   return (
     <div className="flex flex-col h-full w-full">
-
+      <Image src={card10Data.image} width={card10Data.width} height={card10Data.height} alt={card10Data.alt} />
     </div>
   )
 }
 
 export const Card11 = () => {
   return (
-    <div className="flex flex-col h-full w-full">
-
+    <div className="flex flex-col h-full w-full justify-center items-center">
+      <div className="flex-1 flex flex-col justify-center items-center text-center text-3xl font-medium">
+        <span className="text-lg text-zinc-500">
+          {card11Data.header}
+        </span>
+        {card11Data.lines.map((item, index) => (
+            <span key={index}>{item}</span>
+          ))}
+      </div>
+      <div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: .7 }}
+          transition={{ ease: "linear", duration: 1,}}
+        >
+          <Image src={card11Data.image} width={card11Data.width} height={card11Data.height} alt={card11Data.alt} />
+        </motion.div>
+      </div>
     </div>
   )
 }
 
 export const Card12 = () => {
-  return (
-    <div className="flex flex-col h-full w-full">
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: .6 });
 
+  return (
+    <div className="flex flex-end h-full w-full justify-center items-center relative">
+      <div className="overlay">
+        <div className="flex flex-col mb-[64px] text-3xl leading-8 text-zinc-50 text-center">
+          {card12Data.lines.map((item, index) => (
+            <span key={index}>{item}</span>
+          ))}
+        </div>
+      </div>
+      <div
+        className="flex justify-center items-center h-full w-full"
+        style={{ 
+          transform: isInView ? "none" : "scale(1.2)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.75s ease", 
+        }}
+      >
+        <Image src={card12Data.image} width={card12Data.width} height={card12Data.height} alt={card12Data.alt} ref={ref} />
+      </div>
     </div>
   )
 }
