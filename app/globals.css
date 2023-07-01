@@ -51,6 +51,14 @@
   overflow: hidden;
 }
 
+.hw-container {
+  @apply relative w-[750px] h-[421px];
+
+  left: 56.5%;
+  top: -2%;
+  transform-origin: 50% 50%;
+}
+
 .overlay {
   @apply absolute bottom-0 flex z-[6] justify-center items-end;
 }

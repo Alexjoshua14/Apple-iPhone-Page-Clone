@@ -5,9 +5,12 @@ import { navOptions } from '../constants/data';
 import { IconType } from 'react-icons';
 import { ColorOption, colorOptions } from '../constants/data';
 
-const ColorSelect = () => {
-  const [selectedColor, setSelectedColor] = useState<ColorOption>(colorOptions[5]);
+interface ColorSelectProps {
+  selectedColor: ColorOption;
+  setSelectedColor: (color: ColorOption) => void;
+}
 
+const ColorSelect = ({selectedColor, setSelectedColor}: ColorSelectProps ) => {
   return (
     <div className="flex justify-end items-center h-12 sticky top-[3.6rem] px-8 z-20
                     text-[.74rem] font-light text-zinc-800 
@@ -33,16 +36,20 @@ const ColorSelect = () => {
           }
         </span>
         
-        {colorOptions.map((color, index) => (
-          <div key={index} 
-              className={`p-[.7rem] rounded-full outline-[2.4px] border-2 border-white 
-                          ${color === selectedColor ? "outline  outline-blue-500" : "cursor-pointer" }`} 
-                          style={{backgroundColor: `var(--${color.color})`}}
-              onClick={() => {selectedColor !== color && setSelectedColor(color)}}
-            >
-            
-          </ div>
-        ))}
+        {colorOptions.map((color, index) => {
+          if (color.show) {
+          return (
+            <div key={index} 
+                className={`p-[.7rem] rounded-full outline-[2.4px] border-2 border-white 
+                            ${color === selectedColor ? "outline  outline-blue-500" : "cursor-pointer" }`} 
+                            style={{backgroundColor: `var(--${color.color})`}}
+                onClick={() => {selectedColor !== color && setSelectedColor(color)}}
+              >
+              
+            </ div>
+            )
+          }
+      })}
       </div>
     </div>
   );

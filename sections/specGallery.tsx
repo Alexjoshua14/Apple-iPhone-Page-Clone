@@ -5,8 +5,13 @@ import { CardSet } from "../components/cards";
 import { useRef } from "react";
 import { motion, useScroll,  useTransform} from "framer-motion";
 import { FaChevronRight } from "react-icons/fa";
+import { ColorOption, colorOptions } from '../constants/data';
 
-const CardContainer = (Item: React.FC, index: number) => {
+interface SpecGalleryProps {
+  selectedColor: ColorOption;
+}
+
+const CardContainer = (Item: React.FC, selectedColor: ColorOption, index: number) => {
 
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({target: ref, 
@@ -23,7 +28,7 @@ const CardContainer = (Item: React.FC, index: number) => {
       <Item />
       <motion.div 
         className="absolute bottom-0 right-0 p-[7px] m-[15px] flex justify-center items-center rounded-full"
-        style={{background: "var(--yellow)"}}
+        style={{background: `var(--${selectedColor.color})`}}
         initial={{ opacity: .5, x: -15 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true}}
@@ -35,7 +40,7 @@ const CardContainer = (Item: React.FC, index: number) => {
   )
 }
 
-const SpecGallery = () => {
+const SpecGallery = ({ selectedColor }: SpecGalleryProps) => {
   
   return (
     <div className="flex justify-center h-max md:h-[1959px] lg:h-[170rem] py-10 border-2 border-yellow-500">
@@ -44,7 +49,7 @@ const SpecGallery = () => {
                       lg:w-[1000px]
       ">
         {CardSet.map((Item: React.FC, index) => (
-            CardContainer(Item, index)
+            CardContainer(Item, selectedColor, index)
         ))}
       </div>
     </div>
