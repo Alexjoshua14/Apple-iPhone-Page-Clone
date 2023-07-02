@@ -28,7 +28,7 @@ const CardContainer = (Item: React.FC, selectedColor: ColorOption, index: number
       <Item />
       <motion.div 
         className="absolute bottom-0 right-0 p-[7px] m-[15px] flex justify-center items-center rounded-full"
-        style={{background: `var(--${selectedColor.color})`}}
+        style={{background: `${selectedColor.hex}`}}
         initial={{ opacity: .5, x: -15 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true}}

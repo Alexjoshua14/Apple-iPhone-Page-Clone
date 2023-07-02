@@ -113,12 +113,12 @@ export const colorOptions: {color: string, base?: string, hex: string, show: boo
   { color: 'blue', hex: '#C0CFDE', show: true },
   { color: 'purple', hex: '#E7D7E9', show: true },
   { color: 'yellow', hex: '#F5E488', show: true },
-  { color: 'yellow', hex: '#F5E488', show: false }, // duplicate for animation
+  { color: 'none', hex: '#F5E488', show: false }, // duplicate for animation
 ]
 
-export const phoneImages: {color: string, imageURL: string, maskURL: string, width: number, height: number, matrix: string, top: number, left: number}[] = [
+export const phoneImages: {color: ColorOption, imageURL: string, maskURL: string, width: number, height: number, matrix: string, top: number, left: number}[] = [
   { 
-    color: 'midnight', 
+    color: colorOptions[0], 
     imageURL: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_midnight__sg7l40u32uim_medium.jpg',
     maskURL: '/images/hero_midnight_mask_medium.png',
     width: 346,
@@ -128,7 +128,7 @@ export const phoneImages: {color: string, imageURL: string, maskURL: string, wid
     top: 177,
   },
   { 
-    color: 'starlight', 
+    color: colorOptions[1], 
     imageURL: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_starlight__fnug85nckkuq_medium.jpg',
     maskURL: '/images/hero_starlight_mask_medium.png',
     width: 338,
@@ -138,7 +138,7 @@ export const phoneImages: {color: string, imageURL: string, maskURL: string, wid
     top: 100,
   },
   { 
-    color: 'red', 
+    color: colorOptions[2], 
     imageURL: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_red__z83xubxufc2i_medium.jpg',
     maskURL: '/images/hero_red_mask_medium.png',
     width: 294,
@@ -148,7 +148,7 @@ export const phoneImages: {color: string, imageURL: string, maskURL: string, wid
     top: 57,
   },
   { 
-    color: 'blue', 
+    color: colorOptions[3], 
     imageURL: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_blue__n9fnkto95n2q_medium.jpg',
     maskURL: '/images/hero_blue_mask_medium.png',
     width: 240,
@@ -158,7 +158,7 @@ export const phoneImages: {color: string, imageURL: string, maskURL: string, wid
     top: 38,
   },
   { 
-    color: 'purple', 
+    color: colorOptions[4], 
     imageURL: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_purple__bs5nrbl1uw3m_medium.jpg',
     maskURL: '/images/hero_purple_mask_medium.png',
     width: 218,
@@ -168,7 +168,7 @@ export const phoneImages: {color: string, imageURL: string, maskURL: string, wid
     top: 35,
   },
   { 
-    color: 'yellow', 
+    color: colorOptions[5], 
     imageURL: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_yellow__d3aifvttsuuu_medium.jpg',
     maskURL: '/images/hero_yellow_mask_medium.png',
     width: 280,

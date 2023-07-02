@@ -27,8 +27,10 @@ const getMatrixValues = (selectedColor: ColorOption) => {
       return "matrix(1.5883, 0.295853, -0.295853, 1.5883, -395.727, 134.274)";
     case "purple":
       return "matrix(1.33282, -0.183277, 0.183277, 1.33282, -492.59, 94.64)";
-    default:
     case "yellow":
+      return "matrix(1.02317, -0.455545, 0.455545, 1.02317, -572.56, 88.41)";
+    default:
+    case "none":
       return "matrix(1.02317, -0.455545, 0.455545, 1.02317, -572.56, 88.41)";
 
   }
@@ -44,7 +46,7 @@ const Hero = ({ selectedColor }: HeroProps) => {
       
       <motion.div className={`hw-container`}
         initial={{
-          transform: "matrix(0, 0, 0, 0, 0)",
+          transform: "matrix(0.76, 0, 0, 0.76, -320, 10)",
         }}
         animate={{
           transform: getMatrixValues(selectedColor),
@@ -52,9 +54,9 @@ const Hero = ({ selectedColor }: HeroProps) => {
         transition={{ ease: [0.65, 0.05, 0.36, 1], duration: 1 }}
       >
         {phoneImages.map((image, index) => (
-            <figure 
+            <motion.figure 
               key={index}
-              className={`absolute`}
+              className={`absolute ${image.color == selectedColor && " scale-125"}`}
               style={{
                 backgroundImage: `url(${image.imageURL})`, backgroundSize: `${image.width}px ${image.height}px`, backgroundRepeat: 'no-repeat',
                 width: image.width, height: image.height,
@@ -62,7 +64,7 @@ const Hero = ({ selectedColor }: HeroProps) => {
                 maskImage: `url(${image.maskURL})`, maskSize: `${image.width}px ${image.height}px`, maskRepeat: 'no-repeat',
               }}
             >
-            </figure>
+            </motion.figure>
           
         ))}
       </motion.div>
