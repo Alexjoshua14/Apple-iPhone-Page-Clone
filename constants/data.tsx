@@ -15,7 +15,7 @@ export interface ColorOption {
 export interface CardData { 
   icon?: string,
   iconAlt?: string,
-  title: string,
+  title: string[],
   desc?: string,
   linkText: string,
   link: string,
@@ -23,6 +23,7 @@ export interface CardData {
   alt: string,
   width: number,
   height: number,
+  mb?: number,
 }
 
 export const navOptions: { name: string, icon?: IconType, size?: number }[] = [
@@ -181,7 +182,7 @@ export const phoneImages: {color: ColorOption, imageURL: string, maskURL: string
 
 export const savingsData: CardData[] = [
   {
-    title: "Get $200–$630 in credit toward iPhone 14 when you trade in iPhone 11 or higher.",
+    title: ["Get $200–$630 in credit toward iPhone 14 when you trade in iPhone 11 or higher."],
     desc: "",
     linkText: "See what your device is worth",
     link: "https://www.apple.com/us/shop/goto/trade_in",
@@ -191,7 +192,7 @@ export const savingsData: CardData[] = [
     height: 200
   },
   {
-    title: "Save up to $800 on iPhone 14 with carrier deals at Apple.",
+    title: ["Save up to $800 on iPhone 14 with carrier deals at Apple."],
     desc: "",
     linkText: "See iPhone deals",
     link: "https://www.apple.com/us/shop/goto/buy_iphone/carrier_offers",
@@ -201,7 +202,7 @@ export const savingsData: CardData[] = [
     height: 200
   },
   { 
-    title: "Pay 0% APR over 24 months with Apple Card.",
+    title: ["Pay 0% APR over 24 months with Apple Card."],
     desc: "Choose Apple Card Monthly Installments when you check out.",
     linkText: "Learn more",
     link: "https://www.apple.com/apple-card/monthly-installments/",
@@ -216,19 +217,20 @@ export const impactData: CardData[] = [
   {
     icon: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/icon_environment__c6uj2lv9q9ci_large_2x.png",
     iconAlt: "Sustainable Apple icon",
-    title: "Recycling, reimagined.",
+    title: ["Recycling, reimagined."],
     desc: "",
     linkText: "See how iPhone reuses materials to conserve resources",
     link: "https://www.apple.com/environment/",
     imgURL: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/environment__26l1ur8e2wy2_large_2x.jpg",
     alt: "Sketch of Earth",
     width: 150,
-    height: 150
+    height: 151,
+    mb: 56
   },
   {
     icon: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/icon_privacy__bnq8lcu8gsoi_large_2x.png",
     iconAlt: "Privacy Apple icon",
-    title: "Privacy. That's iPhone.",
+    title: ["Privacy. ", "That's iPhone."],
     desc: "",
     linkText: "Check out the latest privacy features for iPhone",
     link: "https://www.apple.com/privacy/",
@@ -240,7 +242,7 @@ export const impactData: CardData[] = [
   {
     icon: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/icon_accessibility__fiow2fk4hziq_large_2x.png",
     iconAlt: "Accessibility icon",
-    title: "iPhone for all.",
+    title: ["iPhone ", "for all."],
     desc: "",
     linkText: "Discover helpful accessibility features like VoiceOver",
     link: "https://www.apple.com/accessibility/",

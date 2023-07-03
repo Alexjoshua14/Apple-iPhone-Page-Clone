@@ -13,9 +13,6 @@ interface HeroProps {
 }
 
 const getMatrixValues = (selectedColor: ColorOption) => {
-  // Noting that this is NOT a clean way to do this but temporary fix
-  if (selectedColor.show === false) return "matrix(1, 0, 0, 1, -320, 0)";
-
   switch (selectedColor.color) {
     case "midnight":
       return "matrix(1.23834, 1.41454, -1.41454, 1.23834, -128.405, 332.59)";
@@ -31,8 +28,7 @@ const getMatrixValues = (selectedColor: ColorOption) => {
       return "matrix(1.02317, -0.455545, 0.455545, 1.02317, -572.56, 88.41)";
     default:
     case "none":
-      return "matrix(1.02317, -0.455545, 0.455545, 1.02317, -572.56, 88.41)";
-
+      return "matrix(1, 0, 0, 1, -320, 0)";
   }
 }
 
@@ -56,9 +52,10 @@ const Hero = ({ selectedColor }: HeroProps) => {
         {phoneImages.map((image, index) => (
             <motion.figure 
               key={index}
-              className={`absolute ${image.color == selectedColor && " scale-125"}`}
+              className={`absolute  ${image.color == selectedColor && ""}`}
               style={{
-                backgroundImage: `url(${image.imageURL})`, backgroundSize: `${image.width}px ${image.height}px`, backgroundRepeat: 'no-repeat',
+                backgroundImage: `url(${image.imageURL})`, backgroundRepeat: 'no-repeat',
+                backgroundSize: `${image.width}px ${image.height}px`, 
                 width: image.width, height: image.height,
                 top: image.top, left: image.left, transform: image.matrix, transformOrigin: "0 0",
                 maskImage: `url(${image.maskURL})`, maskSize: `${image.width}px ${image.height}px`, maskRepeat: 'no-repeat',
