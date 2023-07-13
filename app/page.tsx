@@ -35,7 +35,7 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col h-full border-2 border-amber-500">
+    <div className="flex flex-col h-full">
       <div>
         <TradeIn />
         <ColorSelect selectedColor={selectedColor} setSelectedColor={handleColorSelection} />
