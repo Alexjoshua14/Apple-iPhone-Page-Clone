@@ -45,9 +45,10 @@ const SpecGallery = ({ selectedColor }: SpecGalleryProps) => {
 
   return (
     <div className="flex justify-center h-max md:h-[1959px] lg:h-[170rem] py-10">
-      <div className="w-[400px] flex flex-col h-full justify-center
-                      md:w-[692px] md:grid grid-cols-5 gap-6 md:gap-[15px] grid-rows-8
-                      lg:w-[1000px]
+      <div className="flex flex-col h-full justify-center overflow-hidden
+                      min-w-[321px] w-[90%] max-w-[390px]
+                      md:w-[692px] md:grid grid-cols-5 grid-rows-8 gap-6 md:gap-[15px] md:max-w-[950px]
+                      lg:w-[950px]
       ">
         {CardSet.map((Item: React.FC, index) => (
           CardContainer(Item, selectedColor, index)

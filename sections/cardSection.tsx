@@ -32,10 +32,11 @@ const titleLines = (title: string[]) => {
   }
 }
 
-const Card = ({data, index}: CardProps) => {
+const Card = ({ data, index }: CardProps) => {
   return (
     <div key={index} className="flex flex-col justify-between items-center rounded-xl bg-zinc-100
-                                w-[24rem] max-w-[24rem] md:w-[21rem] lg:w-[20rem] 
+                                min-w-[321px] w-[90%] max-w-[390px]
+                                md:w-[21rem] lg:w-[20rem] 
                                 h-full max-h-[34rem] overflow-hidden"
     >
       <div className="flex-2 flex flex-col justify-center items-center max-w-[268px] md:max-w-none md:px-4 py-[46px]">
@@ -55,7 +56,7 @@ const Card = ({data, index}: CardProps) => {
           <MdKeyboardArrowRight size={17} className="inline" />
         </a>
       </div>
-      <div className={`flex justify-center items-end ${data.mb && "mb-["+data.mb+"px]"}`}>
+      <div className={`flex justify-center items-end ${data.mb && "mb-[" + data.mb + "px]"}`}>
         <Image src={data.imgURL} alt={data.alt} width={data.width} height={data.height} />
       </div>
     </div>
