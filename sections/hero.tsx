@@ -13,9 +13,13 @@ interface HeroProps {
 }
 
 const isSmallScreen = () => {
-  console.log(window.innerWidth)
-  console.log(Number(theme.extend.screens.md.slice(0, -2)));
-  return window.innerWidth < Number(theme.extend.screens.md.slice(0, -2));
+  try {
+    return window.innerWidth < Number(theme.extend.screens.md.slice(0, -2));
+  } catch (err) {
+    //Likely caused by SSR
+    //Prioritize mobile view
+    return true;
+  }
 }
 
 const getMatrixValues = (selectedColor: ColorOption) => {
