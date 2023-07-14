@@ -3,18 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --midnight: #31353A;
-  --starlight: #F0ECE8;
-  --red: #E11C2A;
-  --blue: #C0CFDE;
-  --purple: #E7D7E9;
-  --yellow: #F5E488;
+  --midnight: #31353a;
+  --starlight: #f0ece8;
+  --red: #e11c2a;
+  --blue: #c0cfde;
+  --purple: #e7d7e9;
+  --yellow: #f5e488;
   --green-percentage: 40%;
   --black-percentage: 100%;
   --color-stop-0: #81be2c;
   --color-stop-1: #81be2c;
   --color-stop-2: #333336;
-  --batteryGradient: radial-gradient(ellipse at top, var(--color-stop-0) 0%, var(--color-stop-1) var(--green-percentage), var(--color-stop-2) var(--black-percentage));
+  --batteryGradient: radial-gradient(
+    ellipse at top,
+    var(--color-stop-0) 0%,
+    var(--color-stop-1) var(--green-percentage),
+    var(--color-stop-2) var(--black-percentage)
+  );
 }
 
 .gradientBackground {
@@ -45,17 +50,15 @@
 }
 
 .hero-gradient {
-  background: linear-gradient(0deg,#f5f5f5,#ffffff) repeat-x;
+  background: linear-gradient(0deg, #f5f5f5, #ffffff) repeat-x;
   background-size: auto 45px;
   background-position: bottom;
   overflow: hidden;
 }
 
 .hw-container {
-  @apply relative w-[750px] h-[421px];
+  @apply relative w-[640px] h-[320px] md:w-[750px] md:h-[421px] left-[50%] top-[-10%] md:left-[56.5%] md:top-[-2%];
 
-  left: 56.5%;
-  top: -2%;
   transform-origin: 50% 50%;
 }
 
@@ -64,38 +67,38 @@
 }
 
 .grid-item-0 {
-  @apply h-[31.75rem] order-1 col-span-3 row-span-2
+  @apply h-[31.75rem] order-1 col-span-3 row-span-2;
 }
 .grid-item-1 {
-  @apply h-[23.5rem] order-2 col-span-2
+  @apply h-[23.5rem] order-2 col-span-2;
 }
 .grid-item-2 {
-  @apply h-[23.5rem] order-3 col-span-2
+  @apply h-[23.5rem] order-3 col-span-2;
 }
 .grid-item-3 {
-  @apply h-[23.5rem] order-4 col-span-2
+  @apply h-[23.5rem] order-4 col-span-2;
 }
 .grid-item-4 {
-  @apply h-[23.5rem] order-5 col-span-3
+  @apply h-[23.5rem] order-5 col-span-3;
 }
 .grid-item-5 {
-  @apply h-[31.75rem] order-6 md:order-7 md:col-span-3 row-span-2
+  @apply h-[31.75rem] order-6 md:order-7 md:col-span-3 row-span-2;
 }
 .grid-item-6 {
-  @apply h-[23.5rem] order-7 md:order-6 col-span-2
+  @apply h-[23.5rem] order-7 md:order-6 col-span-2;
 }
 .grid-item-7 {
-  @apply h-[23.5rem] order-8 col-span-2
+  @apply h-[23.5rem] order-8 col-span-2;
 }
 .grid-item-8 {
-  @apply h-[23.5rem] order-9 col-span-3
+  @apply h-[23.5rem] order-9 col-span-3;
 }
 .grid-item-9 {
-  @apply h-[23.5rem] order-10 col-span-2
+  @apply h-[23.5rem] order-10 col-span-2;
 }
 .grid-item-10 {
-  @apply h-[31.75rem] order-11 col-span-3 row-span-2
+  @apply h-[31.75rem] order-11 col-span-3 row-span-2;
 }
 .grid-item-11 {
-  @apply h-[31.75rem] order-12 row-span-2 col-span-2
+  @apply h-[31.75rem] order-12 row-span-2 col-span-2;
 }

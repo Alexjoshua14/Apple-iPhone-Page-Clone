@@ -12,10 +12,10 @@ export interface ColorOption {
   show: boolean
 }
 
-export interface CardData { 
+export interface CardData {
   icon?: string,
   iconAlt?: string,
-  title: string,
+  title: string[],
   desc?: string,
   linkText: string,
   link: string,
@@ -23,6 +23,7 @@ export interface CardData {
   alt: string,
   width: number,
   height: number,
+  mb?: number,
 }
 
 export const navOptions: { name: string, icon?: IconType, size?: number }[] = [
@@ -87,8 +88,8 @@ export const downArrow = {
   icon: PiCaretDownThin,
   size: 25
 }
-  
-export const smallNavOptions: {name: string, icon: IconType, size: number}[] = [
+
+export const smallNavOptions: { name: string, icon: IconType, size: number }[] = [
   {
     name: 'Search',
     icon: AiOutlineSearch,
@@ -106,82 +107,175 @@ export const smallNavOptions: {name: string, icon: IconType, size: number}[] = [
   },
 ]
 
-export const colorOptions: {color: string, base?: string, hex: string, show: boolean}[] = [
+export const colorOptions: { color: string, base?: string, hex: string, show: boolean }[] = [
   { color: 'midnight', hex: '#31353A', show: true },
   { color: 'starlight', hex: '#F0ECE8', show: true },
   { color: 'red', base: '(product)', hex: '#E11C2A', show: true },
   { color: 'blue', hex: '#C0CFDE', show: true },
   { color: 'purple', hex: '#E7D7E9', show: true },
   { color: 'yellow', hex: '#F5E488', show: true },
-  { color: 'yellow', hex: '#F5E488', show: false }, // duplicate for animation
+  { color: 'none', hex: '#F5E488', show: false }, // duplicate for animation
 ]
 
-export const phoneImages: {color: string, imageURL: string, maskURL: string, width: number, height: number, matrix: string, top: number, left: number}[] = [
-  { 
-    color: 'midnight', 
-    imageURL: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_midnight__sg7l40u32uim_medium.jpg',
-    maskURL: '/images/hero_midnight_mask_medium.png',
-    width: 346,
-    height: 366,
-    matrix: 'matrix(0.52, 0, 0, 0.52, 0, 0)',
-    left: 0,
-    top: 177,
+interface ImageInfo {
+  width: number,
+  height: number,
+  url: string,
+  maskURL: string,
+  top: number,
+  left: number,
+  matrix: string,
+}
+
+interface ImageSet {
+  small: ImageInfo,
+  medium: ImageInfo,
+}
+
+export const phoneImages: { color: ColorOption, imageSet: ImageSet }[] = [
+  {
+    color: colorOptions[0],
+    imageSet: {
+      small: {
+        url: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_midnight__sg7l40u32uim_small.jpg',
+        width: 296,
+        height: 312,
+        maskURL: '/images/hero_midnight_mask_small.png',
+        top: 120,
+        left: 2,
+        matrix: 'matrix(0.51, 0, 0, 0.51, 0, 0)',
+      },
+      medium: {
+        url: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_midnight__sg7l40u32uim_medium.jpg',
+        width: 346,
+        height: 366,
+        maskURL: '/images/hero_midnight_mask_medium.png',
+        top: 177,
+        left: 0,
+        matrix: 'matrix(0.52, 0, 0, 0.52, 0, 0)',
+      }
+    },
   },
-  { 
-    color: 'starlight', 
-    imageURL: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_starlight__fnug85nckkuq_medium.jpg',
-    maskURL: '/images/hero_starlight_mask_medium.png',
-    width: 338,
-    height: 380,
-    matrix: 'matrix(0.535, 0, 0, 0.535, 0, 0)',
-    left: 66,
-    top: 100,
+  {
+    color: colorOptions[1],
+    imageSet: {
+      small: {
+        url: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_starlight__fnug85nckkuq_small.jpg',
+        width: 288,
+        height: 324,
+        maskURL: '/images/hero_starlight_mask_small.png',
+        top: 54,
+        left: 59,
+        matrix: 'matrix(0.52, 0, 0, 0.52, 0, 0)',
+      },
+      medium: {
+        url: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_starlight__fnug85nckkuq_medium.jpg',
+        width: 338,
+        height: 380,
+        maskURL: '/images/hero_starlight_mask_medium.png',
+        top: 100,
+        left: 66,
+        matrix: 'matrix(0.535, 0, 0, 0.535, 0, 0)',
+      }
+    },
   },
-  { 
-    color: 'red', 
-    imageURL: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_red__z83xubxufc2i_medium.jpg',
-    maskURL: '/images/hero_red_mask_medium.png',
-    width: 294,
-    height: 370,
-    matrix: 'matrix(0.54, 0, 0, 0.54, 0, 0)',
-    left: 166,
-    top: 57,
+  {
+    color: colorOptions[2],
+    imageSet: {
+      small: {
+        url: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_red__z83xubxufc2i_small.jpg',
+        width: 250,
+        height: 316,
+        maskURL: '/images/hero_red_mask_small.png',
+        top: 15,
+        left: 142,
+        matrix: 'matrix(0.535, 0, 0, 0.535, 0, 0)',
+      },
+      medium: {
+        url: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_red__z83xubxufc2i_medium.jpg',
+        width: 294,
+        height: 370,
+        maskURL: '/images/hero_red_mask_medium.png',
+        top: 57,
+        left: 166,
+        matrix: 'matrix(0.54, 0, 0, 0.54, 0, 0)',
+      }
+    },
   },
-  { 
-    color: 'blue', 
-    imageURL: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_blue__n9fnkto95n2q_medium.jpg',
-    maskURL: '/images/hero_blue_mask_medium.png',
-    width: 240,
-    height: 376,
-    matrix: 'matrix(0.58, 0, 0, 0.58, 0, 0)',
-    left: 283,
-    top: 38,
+  {
+    color: colorOptions[3],
+    imageSet: {
+      small: {
+        url: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_blue__n9fnkto95n2q_small.jpg',
+        width: 204,
+        height: 322,
+        maskURL: '/images/hero_blue_mask_small.png',
+        top: -2,
+        left: 242,
+        matrix: 'matrix(0.58, 0, 0, 0.58, 0, 0)',
+      },
+      medium: {
+        url: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_blue__n9fnkto95n2q_medium.jpg',
+        width: 240,
+        height: 376,
+        maskURL: '/images/hero_blue_mask_medium.png',
+        top: 38,
+        left: 283,
+        matrix: 'matrix(0.58, 0, 0, 0.58, 0, 0)',
+      }
+    },
   },
-  { 
-    color: 'purple', 
-    imageURL: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_purple__bs5nrbl1uw3m_medium.jpg',
-    maskURL: '/images/hero_purple_mask_medium.png',
-    width: 218,
-    height: 404,
-    matrix: 'matrix(0.68, 0, 0, 0.68, 0, 0)',
-    left: 408,
-    top: 35,
+  {
+    color: colorOptions[4],
+    imageSet: {
+      small: {
+        url: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_purple__bs5nrbl1uw3m_small.jpg',
+        width: 186,
+        height: 344,
+        maskURL: '/images/hero_purple_mask_small.png',
+        top: -3,
+        left: 348,
+        matrix: 'matrix(0.675, 0, 0, 0.675, 0, 0)',
+      },
+      medium: {
+        url: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_purple__bs5nrbl1uw3m_medium.jpg',
+        width: 218,
+        height: 404,
+        maskURL: '/images/hero_purple_mask_medium.png',
+        top: 35,
+        left: 408,
+        matrix: 'matrix(0.68, 0, 0, 0.68, 0, 0)',
+      }
+    },
   },
-  { 
-    color: 'yellow', 
-    imageURL: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_yellow__d3aifvttsuuu_medium.jpg',
-    maskURL: '/images/hero_yellow_mask_medium.png',
-    width: 280,
-    height: 402,
-    matrix: 'matrix(0.87, 0, 0, 0.87, 0, 0)',
-    left: 511,
-    top: 72,
+  {
+    color: colorOptions[5],
+    imageSet: {
+      small: {
+        url: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_yellow__d3aifvttsuuu_small.jpg',
+        width: 238,
+        height: 342,
+        maskURL: '/images/hero_yellow_mask_small.png',
+        top: 18,
+        left: 434,
+        matrix: 'matrix(0.86, 0, 0, 0.86, 0, 0)',
+      },
+      medium: {
+        url: 'https://www.apple.com/v/iphone-14/i/images/key-features/hero/hero_yellow__d3aifvttsuuu_medium.jpg',
+        width: 280,
+        height: 402,
+        maskURL: '/images/hero_yellow_mask_medium.png',
+        top: 72,
+        left: 511,
+        matrix: 'matrix(0.87, 0, 0, 0.87, 0, 0)',
+      }
+    },
   },
 ]
 
 export const savingsData: CardData[] = [
   {
-    title: "Get $200–$630 in credit toward iPhone 14 when you trade in iPhone 11 or higher.",
+    title: ["Get $200–$630 in credit toward iPhone 14 when you trade in iPhone 11 or higher."],
     desc: "",
     linkText: "See what your device is worth",
     link: "https://www.apple.com/us/shop/goto/trade_in",
@@ -191,7 +285,7 @@ export const savingsData: CardData[] = [
     height: 200
   },
   {
-    title: "Save up to $800 on iPhone 14 with carrier deals at Apple.",
+    title: ["Save up to $800 on iPhone 14 with carrier deals at Apple."],
     desc: "",
     linkText: "See iPhone deals",
     link: "https://www.apple.com/us/shop/goto/buy_iphone/carrier_offers",
@@ -200,8 +294,8 @@ export const savingsData: CardData[] = [
     width: 400,
     height: 200
   },
-  { 
-    title: "Pay 0% APR over 24 months with Apple Card.",
+  {
+    title: ["Pay 0% APR over 24 months with Apple Card."],
     desc: "Choose Apple Card Monthly Installments when you check out.",
     linkText: "Learn more",
     link: "https://www.apple.com/apple-card/monthly-installments/",
@@ -216,19 +310,20 @@ export const impactData: CardData[] = [
   {
     icon: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/icon_environment__c6uj2lv9q9ci_large_2x.png",
     iconAlt: "Sustainable Apple icon",
-    title: "Recycling, reimagined.",
+    title: ["Recycling, reimagined."],
     desc: "",
     linkText: "See how iPhone reuses materials to conserve resources",
     link: "https://www.apple.com/environment/",
     imgURL: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/environment__26l1ur8e2wy2_large_2x.jpg",
     alt: "Sketch of Earth",
     width: 150,
-    height: 150
+    height: 151,
+    mb: 56
   },
   {
     icon: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/icon_privacy__bnq8lcu8gsoi_large_2x.png",
     iconAlt: "Privacy Apple icon",
-    title: "Privacy. That's iPhone.",
+    title: ["Privacy. ", "That's iPhone."],
     desc: "",
     linkText: "Check out the latest privacy features for iPhone",
     link: "https://www.apple.com/privacy/",
@@ -240,7 +335,7 @@ export const impactData: CardData[] = [
   {
     icon: "https://www.apple.com/v/iphone-14/i/images/key-features/endcap/icon_accessibility__fiow2fk4hziq_large_2x.png",
     iconAlt: "Accessibility icon",
-    title: "iPhone for all.",
+    title: ["iPhone ", "for all."],
     desc: "",
     linkText: "Discover helpful accessibility features like VoiceOver",
     link: "https://www.apple.com/accessibility/",

@@ -15,21 +15,30 @@ import ColorSelect from '../components/ColorSelect';
 
 import { ColorOption, colorOptions } from '../constants/data';
 
-
 export default function Home() {
-  const [selectedColor, setSelectedColor] = useState<ColorOption>(colorOptions[0]);
+  const [selectedColor, setSelectedColor] = useState<ColorOption>(colorOptions[6]);
+  const [animationEnded, setAnimationEnded] = useState<boolean>(false);
 
   useEffect(() => {
     setTimeout(() => {
       setSelectedColor(colorOptions[5]);
+      setAnimationEnded(true);
     }, 2000);
   }, []);
 
+  const handleColorSelection = (color: ColorOption) => {
+    if (!animationEnded) {
+      return;
+    }
+
+    setSelectedColor(color);
+  }
+
   return (
-    <div className="flex flex-col h-full border-2 border-amber-500">
+    <div className="flex flex-col h-full">
       <div>
         <TradeIn />
-        <ColorSelect selectedColor={selectedColor} setSelectedColor={setSelectedColor} />
+        <ColorSelect selectedColor={selectedColor} setSelectedColor={handleColorSelection} />
         <Hero selectedColor={selectedColor} />
         <BuyNow />
         <SpecGallery selectedColor={selectedColor} />
