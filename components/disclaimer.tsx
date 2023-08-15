@@ -8,6 +8,7 @@ const Disclaimer = () => {
   const close = () => {
     setShow(false);
   }
+
   if (!show) {
     return null;
   }
@@ -22,8 +23,8 @@ const Disclaimer = () => {
             {`This site is an echo of the iPhone 14 page on Apple's website. It is not affiliated with Apple in any way.`}
           </p>
         </div>
-        <button onClick={close} className="font-medium bg-gray-200 rounded-full px-4 py-2 bg-opacity-90">
-          {`Close`}
+        <button aria-label="close disclaimer" onClick={close} className="font-medium bg-gray-200 rounded-full px-4 py-2 bg-opacity-90">
+          {`Close Disclaimer`}
         </button>
       </section>
     </dialog>
