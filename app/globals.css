@@ -102,3 +102,11 @@
 .grid-item-11 {
   @apply h-[31.75rem] order-12 row-span-2 col-span-2;
 }
+
+disclaimer {
+  @apply flex fixed top-0 left-0 translate-x-[-50%] translate-y-[-50%] z-50;
+}
+
+disclaimer[aria-hidden="true"] {
+  @apply hidden;
+}
